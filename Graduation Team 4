@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        nav {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #555;
+            text-align: center;
+        }
+        .cv-section {
+            margin-bottom: 40px;
+        }
+        .cv-section h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skills span {
+            background: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-to-top a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#ali">Ali Mohamed Gamal</a>
+        <a href="#basant">Basant Ahmed Saad</a>
+        <a href="#sayed">Sayed Mohamed Elsayed</a>
+    </nav>
+
+    <div class="container">
+        <h1>Team Portfolio</h1>
+        <p>Welcome to our team portfolio! Click a name above to view individual profiles.</p>
+
+        <div class="api-section">
+            <h2>Gemini API Data</h2>
+            <p id="api-content">Fetching data from Gemini API...</p>
+        </div>
+    </div>
+
+    <div class="container" id="ali">
+        <h1>Ali Mohamed Gamal</h1>
+        <h3>Business Analytics Student</h3>
+        <div class="cv-section">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> <a href="mailto:alimogamal2004@gmail.com">alimogamal2004@gmail.com</a></p>
+            <p><strong>Phone:</strong> 01022996301</p>
+            <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/ali-gamal-gaga" target="_blank">Ali Gamal</a></p>
+        </div>
+        <div class="cv-section">
+            <h2>Education</h2>
+            <p>Business Analytics, Egyptian Russian University, Cairo</p>
+            <p>Sep 2021 - Jul 2025</p>
+        </div>
+        <div class="cv-section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>Power BI</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Microsoft Office</span>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <a href="#">Back to Top</a>
+        </div>
+    </div>
+
+    <div class="container" id="basant">
+        <h1>Basant Ahmed Saad</h1>
+        <h3>Management and Technology Student</h3>
+        <div class="cv-section">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> <a href="mailto:basantahmedsaadmohamed@gmail.com">basantahmedsaadmohamed@gmail.com</a></p>
+            <p><strong>Phone:</strong> 01062918778</p>
+        </div>
+        <div class="cv-section">
+            <h2>Education</h2>
+            <p>Management and Professional Technology, Egyptian Russian University</p>
+            <p>Level: 2 | GPA: 3.01</p>
+        </div>
+        <div class="cv-section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>C++</span>
+                <span>Java</span>
+                <span>SPSS</span>
+                <span>Power BI</span>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <a href="#">Back to Top</a>
+        </div>
+    </div>
+
+    <div class="container" id="sayed">
+        <h1>Sayed Mohamed Elsayed</h1>
+        <h3>Management and Professional Technology Student</h3>
+        <div class="cv-section">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> <a href="mailto:sayedmahaba57@gmail.com">sayedmahaba57@gmail.com</a></p>
+            <p><strong>Phone:</strong> 01065042672</p>
+        </div>
+        <div class="cv-section">
+            <h2>Education</h2>
+            <p>Management and Professional Technology, Egyptian Russian University</p>
+            <p>Level: 3 | GPA: 3.02</p>
+        </div>
+        <div class="cv-section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>Python</span>
+                <span>R</span>
+                <span>C++</span>
+            </div>
+        </div>
+        <div class="back-to-top">
+            <a href="#">Back to Top</a>
+        </div>
+    </div>
+
+    <script>
+        // Fetch Gemini API data
+        const apiKey = 'AIzaSyAuUsaQjUt1zVWDPwwVsitoBMh1EN-99mQ'; 
+        const apiUrl = 'https://api.gemini.com/v1/pubticker/BTCUSD'; 
+
+        async function fetchGeminiData() {
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const data = await response.json();
+                document.getElementById('api-content').innerHTML = `
+                    <p><strong>Sample Data 1:</strong> ${data.sampleData1}</p>
+                    <p><strong>Sample Data 2:</strong> ${data.sampleData2}</p>
+                `;
+            } catch (error) {
+                console.error('Error fetching Gemini API data:', error);
+                document.getElementById('api-content').textContent = 'Failed to fetch Gemini API data.';
+            }
+        }
+
+        // Call API on load
+        fetchGeminiData();
+    </script>
+</body>
+</html>
