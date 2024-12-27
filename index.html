@@ -3,142 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Portfolio</title>
+    <title>Team Profile</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #eceff1;
+            color: #37474f;
         }
-        nav {
-            background-color: #007BFF;
+        header, footer {
+            background-color: #00897b;
             color: white;
-            padding: 10px;
             text-align: center;
+            padding: 1em 0;
         }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
-        nav a:hover {
-            text-decoration: underline;
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
         }
-        .container {
-            width: 80%;
-            margin: auto;
+        .member {
+            background: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #00897b;
+            margin-bottom: 20px;
+        }
+        .member h2 {
+            font-size: 1.5em;
+            color: #00897b;
+        }
+        .member p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .projects {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        .project {
+            width: 250px;
+            text-align: center;
+            background: #fafafa;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .project img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
             border-radius: 8px;
         }
-        h1, h2, h3 {
-            color: #555;
+        .project h3 {
+            color: #00897b;
+            margin-top: 15px;
+        }
+        .contact {
+            background-color: #f4f4f4;
+            padding: 40px 20px;
             text-align: center;
         }
-        .cv-section {
-            margin-bottom: 40px;
+        .contact h2 {
+            color: #00897b;
+            font-size: 2em;
         }
-        .cv-section h2 {
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 5px;
-        }
-        .skills {
+        .contact-icons {
             display: flex;
-            flex-wrap: wrap;
-        }
-        .skills span {
-            background: #007BFF;
-            color: white;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 5px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        .back-to-top {
-            text-align: center;
+            justify-content: center;
+            gap: 20px;
             margin-top: 20px;
         }
-        .back-to-top a {
-            color: #007BFF;
+        .contact-icons a {
+            color: #00897b;
+            font-size: 2em;
             text-decoration: none;
+        }
+        .qna-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .qna-section h2 {
+            color: #00897b;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .qna-box {
+            width: 60%;
+            height: 150px;
+            margin: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1em;
+            color: #37474f;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#ali">Ali Mohamed Gamal</a>
-        <a href="#basant">Basant Ahmed Saad</a>
-        <a href="#sayed">Sayed Mohamed Elsayed</a>
-    </nav>
+    <header>
+        <h1>Meet Our Team</h1>
+    </header>
 
-    <div class="container">
-        <h1>Team Portfolio</h1>
-        <p>Welcome to our team portfolio! Click a name above to view individual profiles.</p>
-
-        <div class="api-section">
-            <h2>Gemini API Data</h2>
-            <p id="api-content">Fetching data from Gemini API...</p>
+    <section class="team">
+        <div class="member">
+            <img src="https://via.placeholder.com/150" alt="Ali Mohamed Gamal">
+            <h2>Ali Mohamed Gamal</h2>
+            <p>Business Analytics Student</p>
+            <p>Experience: Power BI, Python, SQL</p>
+            <p>Previous Projects: Infinity Travel, Tazkarti, COP 27</p>
         </div>
-    </div>
-
-    <div class="container" id="ali">
-        <h1>Ali Mohamed Gamal</h1>
-        <h3>Business Analytics Student</h3>
-        <div class="cv-section">
-            <h2>Contact</h2>
-            <p><strong>Email:</strong> <a href="mailto:alimogamal2004@gmail.com">alimogamal2004@gmail.com</a></p>
-            <p><strong>Phone:</strong> 01022996301</p>
-            <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/ali-gamal-gaga" target="_blank">Ali Gamal</a></p>
+        <div class="member">
+            <img src="https://via.placeholder.com/150" alt="Basant Ahmed Saad">
+            <h2>Basant Ahmed Saad</h2>
+            <p>Management and Technology Student</p>
+            <p>Experience: Visual Studio, SPSS, SQL</p>
+            <p>Previous Projects: Car Rental System, Hotel Management</p>
         </div>
-        <div class="cv-section">
-            <h2>Education</h2>
-            <p>Business Analytics, Egyptian Russian University, Cairo</p>
-            <p>Sep 2021 - Jul 2025</p>
+        <div class="member">
+            <img src="https://via.placeholder.com/150" alt="Sayed Mohamed Elsayed">
+            <h2>Sayed Mohamed Elsayed</h2>
+            <p>Management and Professional Technology Student</p>
+            <p>Experience: Python, R, C++</p>
+            <p>Previous Projects: Data Cleaning and Analysis, IoT Security</p>
         </div>
-        <div class="cv-section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <span>Power BI</span>
-                <span>Python</span>
-                <span>SQL</span>
-                <span>Microsoft Office</span>
-            </div>
+    </section>
+
+    <section class="projects">
+        <div class="project">
+            <img src="https://via.placeholder.com/400x200" alt="Project 1">
+            <h3>Spotify Analysis</h3>
         </div>
-        <div class="back-to-top">
-            <a href="#">Back to Top</a>
+        <div class="project">
+            <img src="https://via.placeholder.com/400x200" alt="Project 2">
+            <h3>Customer Churn Prediction</h3>
         </div>
-    </div>
+        <div class="project">
+            <img src="https://via.placeholder.com/400x200" alt="Project 3">
+            <h3>IoT Security</h3>
+        </div>
+    </section>
 
-    <script>
-        // Fetch Gemini API data
-        const apiUrl = 'https://api.gemini.com/v1/pubticker/BTCUSD';
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-icons">
+            <a href="mailto:alimogamal2004@gmail.com">📧</a>
+            <a href="mailto:basantahmedsaadmohamed@gmail.com">📧</a>
+            <a href="mailto:sayedmahaba57@gmail.com">📧</a>
+        </div>
+    </section>
 
-        async function fetchGeminiData() {
-            try {
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                document.getElementById('api-content').innerHTML = `
-                    <p><strong>Last Price:</strong> ${data.last}</p>
-                    <p><strong>Bid Price:</strong> ${data.bid}</p>
-                    <p><strong>Ask Price:</strong> ${data.ask}</p>
-                `;
-            } catch (error) {
-                console.error('Error fetching Gemini API data:', error);
-                document.getElementById('api-content').textContent = 'Failed to fetch Gemini API data.';
-            }
-        }
+    <section class="qna-section">
+        <h2>Ask Us Any Question</h2>
+        <textarea class="qna-box" placeholder="Type your question here..."></textarea>
+    </section>
 
-        // Call API on load
-        fetchGeminiData();
-    </script>
+    <footer>
+        <p>&copy; 2024 Our Team. All rights reserved.</p>
+    </footer>
 </body>
 </html>
