@@ -6,7 +6,7 @@
     <title>Team Profile</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
             background-color: #eceff1;
@@ -61,7 +61,7 @@
         }
         .member a {
             text-decoration: none;
-            color: #00897b;
+            color: white;
             font-weight: bold;
             font-size: 1.1em;
         }
@@ -81,6 +81,75 @@
         }
         .cv-button:hover {
             background-color: #004d40;
+        }
+
+        /* Gemini Chat Styles */
+        .gemini-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: purple;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .chatbox {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .chatbox-header {
+            background: #00897b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chatbox-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chatbox-footer {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbox-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .chatbox-footer button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background: #00897b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chatbox-footer button:hover {
+            background: #004d40;
         }
     </style>
 </head>
@@ -122,5 +191,47 @@
         </div>
     </section>
 
+    <!-- Gemini Chat -->
+    <div class="gemini-icon" onclick="toggleChatbox()"></div>
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">Gemini AI Chatbot</div>
+        <div class="chatbox-body" id="chatbox-body">
+            <p>Welcome to Gemini! How can I assist you today?</p>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatbox() {
+            const chatbox = document.getElementById('chatbox');
+            chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                const chatBody = document.getElementById('chatbox-body');
+                const userMessage = document.createElement('p');
+                userMessage.textContent = `You: ${message}`;
+                userMessage.style.color = '#37474f';
+                chatBody.appendChild(userMessage);
+                input.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                // Simulate Gemini response
+                setTimeout(() => {
+                    const botMessage = document.createElement('p');
+                    botMessage.textContent = 'Gemini: Thank you for your message!';
+                    botMessage.style.color = '#00897b';
+                    chatBody.appendChild(botMessage);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
 </body>
 </html>
